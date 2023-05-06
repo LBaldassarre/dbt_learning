@@ -9,6 +9,8 @@ with teams as (
     select '76ers' as TEAM
     union all
     select 'Heat' as TEAM
+    union all
+    select 'Bulls' as TEAM
 
 )
 
