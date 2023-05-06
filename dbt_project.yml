@@ -46,3 +46,6 @@ models:
       +schema: staging
       example:
         +materialized: table
+        +tags:
+            - p1
+            - another_tag

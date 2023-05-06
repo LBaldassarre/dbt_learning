@@ -1,3 +1,9 @@
+{{ 
+    config(
+        tags=["special"]
+    )
+}}
+
 {{ config(materialized='table') }}
 
 with teams as (
