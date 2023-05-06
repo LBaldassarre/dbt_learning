@@ -14,5 +14,5 @@ with teams as (
 
 )
 
-select *
+select *, '{{ invocation_id }}' as invocation_id
 from teams
