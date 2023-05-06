@@ -6,6 +6,9 @@ name: 'dbt_learning'
 version: '1.0.0'
 config-version: 2
 
+vars:
+    current_champion:  Lakers
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'dbt_learning'
 

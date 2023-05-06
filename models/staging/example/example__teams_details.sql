@@ -15,7 +15,8 @@ final as (
     select 
         teams.team,
         teams_locations.city,
-        teams_locations.state
+        teams_locations.state,
+        teams.team = '{{ var("current_champion") }}' as is_champion
     from teams
 
     left join teams_locations
