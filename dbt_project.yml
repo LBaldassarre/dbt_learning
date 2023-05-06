@@ -26,6 +26,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+on-run-start: "{{ insert_audits('run_start') }}"
+on-run-end: "{{ insert_audits('run_end') }}"
+
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
@@ -34,6 +37,8 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
+  pre-hook: "{{ insert_audits('model_start') }}"
+  post-hook: "{{ insert_audits('model_end') }}"
   dbt_learning:
     # Config indicated by + and applies to all files under models/staging/
     staging:
