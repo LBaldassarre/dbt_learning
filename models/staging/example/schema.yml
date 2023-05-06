@@ -2,7 +2,7 @@
 version: 2
 
 models:
-  - name: my_first_dbt_model
+  - name: example__my_first_dbt_model
     description: "A starter dbt model"
     columns:
       - name: id
@@ -11,7 +11,7 @@ models:
           - unique
           - not_null
 
-  - name: my_second_dbt_model
+  - name: example__my_second_dbt_model
     description: "A starter dbt model"
     columns:
       - name: id
@@ -19,3 +19,18 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: example__teams_details
+    description: "A list of a few NBA teams that made the Playoffs in 2020."
+
+    columns:
+      - name: team
+        description: "The name of the team."
+
+      - name: city
+        description: "The home city of the team."
+        tests:
+          - is_la_team
+
+      - name: state
+        description: "The home state of the team."
